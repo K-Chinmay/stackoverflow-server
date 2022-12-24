@@ -7,6 +7,8 @@ const userSchema = mongoose.Schema({
   about: { type: String },
   tags: { type: [String] },
   joinedOn: { type: Date, default: Date.now },
+  followers: { type: [String], default: [] },
+  following: { type: [String], default: [] },
 });
 
 export default mongoose.model("User", userSchema);
