@@ -7,8 +7,9 @@ const userSchema = mongoose.Schema({
   about: { type: String },
   tags: { type: [String] },
   joinedOn: { type: Date, default: Date.now },
-  followers: { type: [String], default: [] },
-  following: { type: [String], default: [] },
+  friends: { type: [String], default: [] },
 });
+
+userSchema.index({ name: "text" });
 
 export default mongoose.model("User", userSchema);
